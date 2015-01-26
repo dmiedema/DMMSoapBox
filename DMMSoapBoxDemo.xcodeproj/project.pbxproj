@@ -1,0 +1,429 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		547BF66D1A76B5290081A1D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF66C1A76B5290081A1D7 /* main.m */; };
+		547BF6701A76B5290081A1D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF66F1A76B5290081A1D7 /* AppDelegate.m */; };
+		547BF6731A76B5290081A1D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6721A76B5290081A1D7 /* ViewController.m */; };
+		547BF6761A76B5290081A1D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6741A76B5290081A1D7 /* Main.storyboard */; };
+		547BF6781A76B5290081A1D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6771A76B5290081A1D7 /* Images.xcassets */; };
+		547BF67B1A76B5290081A1D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6791A76B5290081A1D7 /* LaunchScreen.xib */; };
+		547BF6871A76B5290081A1D7 /* DMMSoapBoxDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6861A76B5290081A1D7 /* DMMSoapBoxDemoTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		547BF6811A76B5290081A1D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 547BF65F1A76B5290081A1D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 547BF6661A76B5290081A1D7;
+			remoteInfo = DMMSoapBoxDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		547BF6671A76B5290081A1D7 /* DMMSoapBoxDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMMSoapBoxDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		547BF66B1A76B5290081A1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547BF66C1A76B5290081A1D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		547BF66E1A76B5290081A1D7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		547BF66F1A76B5290081A1D7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		547BF6711A76B5290081A1D7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		547BF6721A76B5290081A1D7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		547BF6751A76B5290081A1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		547BF6771A76B5290081A1D7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		547BF67A1A76B5290081A1D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		547BF6801A76B5290081A1D7 /* DMMSoapBoxDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMMSoapBoxDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		547BF6851A76B5290081A1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		547BF6861A76B5290081A1D7 /* DMMSoapBoxDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMSoapBoxDemoTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		547BF6641A76B5290081A1D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547BF67D1A76B5290081A1D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		547BF65E1A76B5290081A1D7 = {
+			isa = PBXGroup;
+			children = (
+				547BF6691A76B5290081A1D7 /* DMMSoapBoxDemo */,
+				547BF6831A76B5290081A1D7 /* DMMSoapBoxDemoTests */,
+				547BF6681A76B5290081A1D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		547BF6681A76B5290081A1D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				547BF6671A76B5290081A1D7 /* DMMSoapBoxDemo.app */,
+				547BF6801A76B5290081A1D7 /* DMMSoapBoxDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		547BF6691A76B5290081A1D7 /* DMMSoapBoxDemo */ = {
+			isa = PBXGroup;
+			children = (
+				547BF66E1A76B5290081A1D7 /* AppDelegate.h */,
+				547BF66F1A76B5290081A1D7 /* AppDelegate.m */,
+				547BF6711A76B5290081A1D7 /* ViewController.h */,
+				547BF6721A76B5290081A1D7 /* ViewController.m */,
+				547BF6741A76B5290081A1D7 /* Main.storyboard */,
+				547BF6771A76B5290081A1D7 /* Images.xcassets */,
+				547BF6791A76B5290081A1D7 /* LaunchScreen.xib */,
+				547BF66A1A76B5290081A1D7 /* Supporting Files */,
+			);
+			path = DMMSoapBoxDemo;
+			sourceTree = "<group>";
+		};
+		547BF66A1A76B5290081A1D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				547BF66B1A76B5290081A1D7 /* Info.plist */,
+				547BF66C1A76B5290081A1D7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		547BF6831A76B5290081A1D7 /* DMMSoapBoxDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				547BF6861A76B5290081A1D7 /* DMMSoapBoxDemoTests.m */,
+				547BF6841A76B5290081A1D7 /* Supporting Files */,
+			);
+			path = DMMSoapBoxDemoTests;
+			sourceTree = "<group>";
+		};
+		547BF6841A76B5290081A1D7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				547BF6851A76B5290081A1D7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		547BF6661A76B5290081A1D7 /* DMMSoapBoxDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547BF68A1A76B5290081A1D7 /* Build configuration list for PBXNativeTarget "DMMSoapBoxDemo" */;
+			buildPhases = (
+				547BF6631A76B5290081A1D7 /* Sources */,
+				547BF6641A76B5290081A1D7 /* Frameworks */,
+				547BF6651A76B5290081A1D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DMMSoapBoxDemo;
+			productName = DMMSoapBoxDemo;
+			productReference = 547BF6671A76B5290081A1D7 /* DMMSoapBoxDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		547BF67F1A76B5290081A1D7 /* DMMSoapBoxDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 547BF68D1A76B5290081A1D7 /* Build configuration list for PBXNativeTarget "DMMSoapBoxDemoTests" */;
+			buildPhases = (
+				547BF67C1A76B5290081A1D7 /* Sources */,
+				547BF67D1A76B5290081A1D7 /* Frameworks */,
+				547BF67E1A76B5290081A1D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				547BF6821A76B5290081A1D7 /* PBXTargetDependency */,
+			);
+			name = DMMSoapBoxDemoTests;
+			productName = DMMSoapBoxDemoTests;
+			productReference = 547BF6801A76B5290081A1D7 /* DMMSoapBoxDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		547BF65F1A76B5290081A1D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Daniel Miedema";
+				TargetAttributes = {
+					547BF6661A76B5290081A1D7 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					547BF67F1A76B5290081A1D7 = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 547BF6661A76B5290081A1D7;
+					};
+				};
+			};
+			buildConfigurationList = 547BF6621A76B5290081A1D7 /* Build configuration list for PBXProject "DMMSoapBoxDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 547BF65E1A76B5290081A1D7;
+			productRefGroup = 547BF6681A76B5290081A1D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				547BF6661A76B5290081A1D7 /* DMMSoapBoxDemo */,
+				547BF67F1A76B5290081A1D7 /* DMMSoapBoxDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		547BF6651A76B5290081A1D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547BF6761A76B5290081A1D7 /* Main.storyboard in Resources */,
+				547BF67B1A76B5290081A1D7 /* LaunchScreen.xib in Resources */,
+				547BF6781A76B5290081A1D7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547BF67E1A76B5290081A1D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		547BF6631A76B5290081A1D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547BF6731A76B5290081A1D7 /* ViewController.m in Sources */,
+				547BF6701A76B5290081A1D7 /* AppDelegate.m in Sources */,
+				547BF66D1A76B5290081A1D7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		547BF67C1A76B5290081A1D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				547BF6871A76B5290081A1D7 /* DMMSoapBoxDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		547BF6821A76B5290081A1D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 547BF6661A76B5290081A1D7 /* DMMSoapBoxDemo */;
+			targetProxy = 547BF6811A76B5290081A1D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		547BF6741A76B5290081A1D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547BF6751A76B5290081A1D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		547BF6791A76B5290081A1D7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				547BF67A1A76B5290081A1D7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		547BF6881A76B5290081A1D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		547BF6891A76B5290081A1D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		547BF68B1A76B5290081A1D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DMMSoapBoxDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		547BF68C1A76B5290081A1D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = DMMSoapBoxDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		547BF68E1A76B5290081A1D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DMMSoapBoxDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMMSoapBoxDemo.app/DMMSoapBoxDemo";
+			};
+			name = Debug;
+		};
+		547BF68F1A76B5290081A1D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = DMMSoapBoxDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMMSoapBoxDemo.app/DMMSoapBoxDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		547BF6621A76B5290081A1D7 /* Build configuration list for PBXProject "DMMSoapBoxDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547BF6881A76B5290081A1D7 /* Debug */,
+				547BF6891A76B5290081A1D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		547BF68A1A76B5290081A1D7 /* Build configuration list for PBXNativeTarget "DMMSoapBoxDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547BF68B1A76B5290081A1D7 /* Debug */,
+				547BF68C1A76B5290081A1D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		547BF68D1A76B5290081A1D7 /* Build configuration list for PBXNativeTarget "DMMSoapBoxDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				547BF68E1A76B5290081A1D7 /* Debug */,
+				547BF68F1A76B5290081A1D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 547BF65F1A76B5290081A1D7 /* Project object */;
+}
