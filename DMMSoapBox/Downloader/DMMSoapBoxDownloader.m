@@ -53,7 +53,7 @@ void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
 }
 
 + (void)downloadAnnouncementsFromURL:(NSURL *)url complete:(DMMCompletionBlock)completion {
-    [[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:url success:^(NSDictionary *defaults) {
+    [[DMMUserDefaults soapboxDefaults] registerDefaultsWithURL:url success:^(NSDictionary *defaults) {
         DMMSetValuesFromDefaultsIntoSoapBoxDefaults(defaults);
         if (completion) { completion(defaults, nil); }
     } failure:^(NSError *error) {

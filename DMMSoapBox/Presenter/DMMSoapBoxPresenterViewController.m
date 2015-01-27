@@ -28,6 +28,28 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 
 @implementation DMMSoapBoxPresenterViewController
 
++ (instancetype)presentURL:(NSURL *)url withOptions:(NSDictionary *)options {
+    DMMSoapBoxPresenterViewController *controller = [[DMMSoapBoxPresenterViewController alloc] init];
+    
+    if ([options[kDMMSoapBoxShowAcceptButton] boolValue]) {
+        controller.showAcceptButton = YES;
+    }
+    if (options[kDMMSoapBoxPresenterAcceptButtonText]) {
+        controller.acceptButtonText = options[kDMMSoapBoxPresenterAcceptButtonText];
+    }
+    if (options[kDMMSoapBoxPresenterAcceptButtonColor]) {
+        controller.acceptButtonColor = options[kDMMSoapBoxPresenterAcceptButtonColor];
+    }
+    if (options[kDMMSoapBoxPresenterDismissButtonColor]) {
+        controller.dismissButtonColor = options[kDMMSoapBoxPresenterDismissButtonColor];
+    }
+    if (options[kDMMSoapBoxPresenterAcceptButtonBlock]) {
+        controller.acceptBlock = options[kDMMSoapBoxPresenterAcceptButtonBlock];
+    }
+    
+    return controller;
+}
+
 #pragma mark - View Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
