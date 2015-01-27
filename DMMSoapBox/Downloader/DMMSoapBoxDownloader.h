@@ -10,9 +10,12 @@
 
 typedef void(^DMMCompletionBlock)(NSDictionary *defaults, NSError *error);
 
+
+BOOL DMMHasNewSoapboxAnnouncement(void);
+
 @interface DMMSoapBoxDownloader : NSObject
 
-+ (void)checkForAnnouncements;
++ (void)checkForAnnouncementsWithCompletion:(DMMCompletionBlock)completion;
 
 + (void)downloadAnnouncementsFromURL:(NSURL *)url complete:(DMMCompletionBlock)completion;
 

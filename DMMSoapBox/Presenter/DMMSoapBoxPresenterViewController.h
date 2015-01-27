@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 typedef void(^DMMVoidBlock)(void);
 
+extern NSString * const kDMMSoapBoxPresenterShowAcceptButton;
+extern NSString * const kDMMSoapBoxPresenterAcceptButtonText;
+extern NSString * const kDMMSoapBoxPresenterAcceptButtonColor;
+extern NSString * const kDMMSoapBoxPresenterDismissButtonColor;
+extern NSString * const kDMMSoapBoxPresenterAcceptButtonBlock;
+
 @interface DMMSoapBoxPresenterViewController : UIViewController
 @property (strong, nonatomic) NSURL *announcementURL;
 @property (nonatomic) BOOL showAcceptButton;
@@ -16,4 +22,6 @@ typedef void(^DMMVoidBlock)(void);
 @property (strong, nonatomic) UIColor *acceptButtonColor;
 @property (strong, nonatomic) UIColor *dismissButtonColor;
 @property (copy, nonatomic) DMMVoidBlock acceptBlock;
+
++ (instancetype)presentURL:(NSURL *)url withOptions:(NSDictionary *)options;
 @end

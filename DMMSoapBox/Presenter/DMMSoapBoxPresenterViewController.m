@@ -11,6 +11,13 @@
 #import <Colours/Colours.h>
 @import WebKit;
 
+NSString * const kDMMSoapBoxPresenterShowAcceptButton   = @"kDMMSoapBoxPresenterShowAcceptButton";
+NSString * const kDMMSoapBoxPresenterAcceptButtonText   = @"kDMMSoapBoxPresenterAcceptButtonText";
+NSString * const kDMMSoapBoxPresenterAcceptButtonColor  = @"kDMMSoapBoxPresenterAcceptButtonColor";
+NSString * const kDMMSoapBoxPresenterDismissButtonColor = @"kDMMSoapBoxPresenterDismissButtonColor";
+NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenterAcceptButtonBlock";
+
+
 @interface DMMSoapBoxPresenterViewController ()
 @property (strong, nonatomic) WKWebView *webView;
 @property (strong, nonatomic) WKWebViewConfiguration *webViewConfiguration;

@@ -7,6 +7,7 @@
 //
 
 #import "DMMSoapBoxDownloader.h"
+#import "DMMSoapBoxPresenterViewController.h"
 #import "DMMUserDefaults.h"
 #import "NSString+DMMMD5.h"
 #import "NSUserDefaults+GroundControl.h"
@@ -14,6 +15,10 @@
 @interface DMMSoapBoxDownloader()
 
 @end
+
+BOOL DMMHasNewSoapboxAnnouncement(void) {
+    return ![[DMMUserDefaults lastReadAnnouncementID] isEqualToString:[DMMUserDefaults latestAnnouncementID]];
+}
 
 void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults);
 void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
@@ -42,33 +47,23 @@ void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
 
 @implementation DMMSoapBoxDownloader
 
-+ (void)checkForAnnouncements {
-    [[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:[DMMUserDefaults announcementURL] success:^(NSDictionary *defaults) {
-        DMMSetValuesFromDefaultsIntoSoapBoxDefaults(defaults);
-        [self sharedCompletion];
-    } failure:^(NSError *error) {
-        NSLog(@"[DMMSoapBoxDownloader] ERROR: - %@ %@", error, error.userInfo);
-    }];
++ (void)checkForAnnouncementsWithCompletion:(DMMCompletionBlock)completion {
+    NSURL *url = [DMMUserDefaults announcementURL];
+    [self downloadAnnouncementsFromURL:url complete:completion];
 }
 
 + (void)downloadAnnouncementsFromURL:(NSURL *)url complete:(DMMCompletionBlock)completion {
     [[NSUserDefaults standardUserDefaults] registerDefaultsWithURL:url success:^(NSDictionary *defaults) {
-        completion(defaults, nil);
         DMMSetValuesFromDefaultsIntoSoapBoxDefaults(defaults);
-        [self sharedCompletion];
+        if (completion) { completion(defaults, nil); }
     } failure:^(NSError *error) {
-        completion(nil, error);
+        if (completion) { completion(nil, error); }
         NSLog(@"[DMMSoapBoxDownloader] ERROR: - %@ %@", error, error.userInfo);
     }];
 }
 
 + (void)registerURLForSoapboxCheck:(NSURL *)url {
     [[DMMUserDefaults soapboxDefaults] setObject:url forKey:kDMMSoapBoxDefaultsAnnouncementURL];
-}
-
-+ (void)sharedCompletion {
-    // present soapbox if there is one
-    
 }
 
 @end
