@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		543C149F1A7718B0001AD38C /* NSString+DMMMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 543C149E1A7718B0001AD38C /* NSString+DMMMD5.m */; };
 		547BF66D1A76B5290081A1D7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF66C1A76B5290081A1D7 /* main.m */; };
 		547BF6701A76B5290081A1D7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF66F1A76B5290081A1D7 /* AppDelegate.m */; };
 		547BF6731A76B5290081A1D7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6721A76B5290081A1D7 /* ViewController.m */; };
@@ -14,6 +15,12 @@
 		547BF6781A76B5290081A1D7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6771A76B5290081A1D7 /* Images.xcassets */; };
 		547BF67B1A76B5290081A1D7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 547BF6791A76B5290081A1D7 /* LaunchScreen.xib */; };
 		547BF6871A76B5290081A1D7 /* DMMSoapBoxDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6861A76B5290081A1D7 /* DMMSoapBoxDemoTests.m */; };
+		547BF6971A76BB790081A1D7 /* DMMUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF6961A76BB790081A1D7 /* DMMUserDefaults.m */; };
+		547BF69B1A76BEF30081A1D7 /* DMMSoapBoxDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF69A1A76BEF30081A1D7 /* DMMSoapBoxDownloader.m */; };
+		547BF69F1A76BF300081A1D7 /* DMMSoapBoxPresenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 547BF69E1A76BF300081A1D7 /* DMMSoapBoxPresenterViewController.m */; };
+		547BF6A41A76BF570081A1D7 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 547BF6A31A76BF570081A1D7 /* WebKit.framework */; };
+		B6D52F1AF0AF4C20828C5E55 /* libPods-DMMSoapBoxDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9ABCDC4654CA17AB1EADCB3 /* libPods-DMMSoapBoxDemo.a */; };
+		FE3D7F96A4B4E1AAEBFE7058 /* libPods-DMMSoapBoxDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1340CE4F594765276A15BC0 /* libPods-DMMSoapBoxDemoTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F46360042076A159BFC828E /* Pods-DMMSoapBoxDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMMSoapBoxDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMMSoapBoxDemo/Pods-DMMSoapBoxDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		543C149D1A7718B0001AD38C /* NSString+DMMMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+DMMMD5.h"; path = "DMMSoapBox/Categories/NSString+DMMMD5.h"; sourceTree = "<group>"; };
+		543C149E1A7718B0001AD38C /* NSString+DMMMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+DMMMD5.m"; path = "DMMSoapBox/Categories/NSString+DMMMD5.m"; sourceTree = "<group>"; };
 		547BF6671A76B5290081A1D7 /* DMMSoapBoxDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMMSoapBoxDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		547BF66B1A76B5290081A1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		547BF66C1A76B5290081A1D7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +50,18 @@
 		547BF6801A76B5290081A1D7 /* DMMSoapBoxDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DMMSoapBoxDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		547BF6851A76B5290081A1D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		547BF6861A76B5290081A1D7 /* DMMSoapBoxDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DMMSoapBoxDemoTests.m; sourceTree = "<group>"; };
+		547BF6951A76BB790081A1D7 /* DMMUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMMUserDefaults.h; path = "DMMSoapBox/User Defaults/DMMUserDefaults.h"; sourceTree = "<group>"; };
+		547BF6961A76BB790081A1D7 /* DMMUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMMUserDefaults.m; path = "DMMSoapBox/User Defaults/DMMUserDefaults.m"; sourceTree = "<group>"; };
+		547BF6991A76BEF30081A1D7 /* DMMSoapBoxDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMMSoapBoxDownloader.h; path = DMMSoapBox/Downloader/DMMSoapBoxDownloader.h; sourceTree = "<group>"; };
+		547BF69A1A76BEF30081A1D7 /* DMMSoapBoxDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMMSoapBoxDownloader.m; path = DMMSoapBox/Downloader/DMMSoapBoxDownloader.m; sourceTree = "<group>"; };
+		547BF69D1A76BF300081A1D7 /* DMMSoapBoxPresenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DMMSoapBoxPresenterViewController.h; path = DMMSoapBox/Presenter/DMMSoapBoxPresenterViewController.h; sourceTree = "<group>"; };
+		547BF69E1A76BF300081A1D7 /* DMMSoapBoxPresenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DMMSoapBoxPresenterViewController.m; path = DMMSoapBox/Presenter/DMMSoapBoxPresenterViewController.m; sourceTree = "<group>"; };
+		547BF6A31A76BF570081A1D7 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		5D5D0E10B86F086894727B7C /* Pods-DMMSoapBoxDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMMSoapBoxDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMMSoapBoxDemo/Pods-DMMSoapBoxDemo.release.xcconfig"; sourceTree = "<group>"; };
+		75C9D24DCAEBEDB78517E339 /* Pods-DMMSoapBoxDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMMSoapBoxDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMMSoapBoxDemoTests/Pods-DMMSoapBoxDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		D1340CE4F594765276A15BC0 /* libPods-DMMSoapBoxDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMMSoapBoxDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9ABCDC4654CA17AB1EADCB3 /* libPods-DMMSoapBoxDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DMMSoapBoxDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECF02B565CD4915A5635C79D /* Pods-DMMSoapBoxDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMMSoapBoxDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMMSoapBoxDemoTests/Pods-DMMSoapBoxDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				547BF6A41A76BF570081A1D7 /* WebKit.framework in Frameworks */,
+				B6D52F1AF0AF4C20828C5E55 /* libPods-DMMSoapBoxDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,18 +78,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE3D7F96A4B4E1AAEBFE7058 /* libPods-DMMSoapBoxDemoTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F1E4EFD5B3D94F5B6620C45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				547BF6A31A76BF570081A1D7 /* WebKit.framework */,
+				D9ABCDC4654CA17AB1EADCB3 /* libPods-DMMSoapBoxDemo.a */,
+				D1340CE4F594765276A15BC0 /* libPods-DMMSoapBoxDemoTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		543C14991A7717D4001AD38C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				543C149D1A7718B0001AD38C /* NSString+DMMMD5.h */,
+				543C149E1A7718B0001AD38C /* NSString+DMMMD5.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 		547BF65E1A76B5290081A1D7 = {
 			isa = PBXGroup;
 			children = (
+				547BF6901A76B6550081A1D7 /* DMMSoapBox */,
 				547BF6691A76B5290081A1D7 /* DMMSoapBoxDemo */,
 				547BF6831A76B5290081A1D7 /* DMMSoapBoxDemoTests */,
 				547BF6681A76B5290081A1D7 /* Products */,
+				7C5F08312167174E7EED502C /* Pods */,
+				0F1E4EFD5B3D94F5B6620C45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +166,55 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		547BF6901A76B6550081A1D7 /* DMMSoapBox */ = {
+			isa = PBXGroup;
+			children = (
+				543C14991A7717D4001AD38C /* Categories */,
+				547BF69C1A76BEFF0081A1D7 /* Presenter */,
+				547BF6941A76BB550081A1D7 /* User Defaults */,
+				547BF6981A76BEDC0081A1D7 /* Downloader */,
+			);
+			name = DMMSoapBox;
+			sourceTree = "<group>";
+		};
+		547BF6941A76BB550081A1D7 /* User Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				547BF6951A76BB790081A1D7 /* DMMUserDefaults.h */,
+				547BF6961A76BB790081A1D7 /* DMMUserDefaults.m */,
+			);
+			name = "User Defaults";
+			sourceTree = "<group>";
+		};
+		547BF6981A76BEDC0081A1D7 /* Downloader */ = {
+			isa = PBXGroup;
+			children = (
+				547BF6991A76BEF30081A1D7 /* DMMSoapBoxDownloader.h */,
+				547BF69A1A76BEF30081A1D7 /* DMMSoapBoxDownloader.m */,
+			);
+			name = Downloader;
+			sourceTree = "<group>";
+		};
+		547BF69C1A76BEFF0081A1D7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				547BF69D1A76BF300081A1D7 /* DMMSoapBoxPresenterViewController.h */,
+				547BF69E1A76BF300081A1D7 /* DMMSoapBoxPresenterViewController.m */,
+			);
+			name = Presenter;
+			sourceTree = "<group>";
+		};
+		7C5F08312167174E7EED502C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F46360042076A159BFC828E /* Pods-DMMSoapBoxDemo.debug.xcconfig */,
+				5D5D0E10B86F086894727B7C /* Pods-DMMSoapBoxDemo.release.xcconfig */,
+				ECF02B565CD4915A5635C79D /* Pods-DMMSoapBoxDemoTests.debug.xcconfig */,
+				75C9D24DCAEBEDB78517E339 /* Pods-DMMSoapBoxDemoTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 547BF68A1A76B5290081A1D7 /* Build configuration list for PBXNativeTarget "DMMSoapBoxDemo" */;
 			buildPhases = (
+				0F93E15D5766CA0693ABEC2D /* Check Pods Manifest.lock */,
 				547BF6631A76B5290081A1D7 /* Sources */,
 				547BF6641A76B5290081A1D7 /* Frameworks */,
 				547BF6651A76B5290081A1D7 /* Resources */,
+				AFDD85ADEFA05C40EA64FA51 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 547BF68D1A76B5290081A1D7 /* Build configuration list for PBXNativeTarget "DMMSoapBoxDemoTests" */;
 			buildPhases = (
+				D35B8A8B6C57C9839ADFCB57 /* Check Pods Manifest.lock */,
 				547BF67C1A76B5290081A1D7 /* Sources */,
 				547BF67D1A76B5290081A1D7 /* Frameworks */,
 				547BF67E1A76B5290081A1D7 /* Resources */,
+				F64A7B444A06E84DCB42A0D5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +314,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F93E15D5766CA0693ABEC2D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AFDD85ADEFA05C40EA64FA51 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DMMSoapBoxDemo/Pods-DMMSoapBoxDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D35B8A8B6C57C9839ADFCB57 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F64A7B444A06E84DCB42A0D5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DMMSoapBoxDemoTests/Pods-DMMSoapBoxDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		547BF6631A76B5290081A1D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -221,7 +384,11 @@
 			files = (
 				547BF6731A76B5290081A1D7 /* ViewController.m in Sources */,
 				547BF6701A76B5290081A1D7 /* AppDelegate.m in Sources */,
+				547BF6971A76BB790081A1D7 /* DMMUserDefaults.m in Sources */,
+				543C149F1A7718B0001AD38C /* NSString+DMMMD5.m in Sources */,
+				547BF69B1A76BEF30081A1D7 /* DMMSoapBoxDownloader.m in Sources */,
 				547BF66D1A76B5290081A1D7 /* main.m in Sources */,
+				547BF69F1A76BF300081A1D7 /* DMMSoapBoxPresenterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +510,7 @@
 		};
 		547BF68B1A76B5290081A1D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F46360042076A159BFC828E /* Pods-DMMSoapBoxDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DMMSoapBoxDemo/Info.plist;
@@ -353,6 +521,7 @@
 		};
 		547BF68C1A76B5290081A1D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D5D0E10B86F086894727B7C /* Pods-DMMSoapBoxDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = DMMSoapBoxDemo/Info.plist;
@@ -363,6 +532,7 @@
 		};
 		547BF68E1A76B5290081A1D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECF02B565CD4915A5635C79D /* Pods-DMMSoapBoxDemoTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -382,6 +552,7 @@
 		};
 		547BF68F1A76B5290081A1D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C9D24DCAEBEDB78517E339 /* Pods-DMMSoapBoxDemoTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -414,6 +585,7 @@
 				547BF68C1A76B5290081A1D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		547BF68D1A76B5290081A1D7 /* Build configuration list for PBXNativeTarget "DMMSoapBoxDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +594,7 @@
 				547BF68F1A76B5290081A1D7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
