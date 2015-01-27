@@ -20,18 +20,6 @@ NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead   = @"kDMMSoapBoxDefa
 NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementID  = @"kDMMSoapBoxDefaultsLastKnownAnnouncementID";
 NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementURL = @"kDMMSoapBoxDefaultsLastKnownAnnouncementURL";
 
-////  Plist Keys
-NSString * const kDMMSoapBoxLatestAnnouncementIDKey  = @"soapbox_announcement_id";
-NSString * const kDMMSoapBoxLatestAnnouncementURLKey = @"soapbox_announcement_url";
-
-NSString * const kDMMSoapBoxAcceptActionURL          = @"soapbox_accept_url";
-
-NSString * const kDMMSoapBoxAcceptButtonTitle        = @"soapbox_accept_title";
-NSString * const kDMMSoapBoxShowAcceptButton         = @"soapbox_show_accept_button";
-
-NSString * const kDMMSoapBoxAcceptButtonColorHex     = @"soapbox_accept_color";
-NSString * const kDMMSoapBoxDismissButtonColorHex    = @"soapbox_dismiss_color";
-
 @implementation DMMUserDefaults
 
 #pragma mark - Suites

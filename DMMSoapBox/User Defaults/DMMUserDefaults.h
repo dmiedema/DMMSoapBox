@@ -18,16 +18,13 @@ extern NSString * const kDMMSoapBoxDefaultsLatestAnnouncementID;
 extern NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead;
 
 ////  Plist Keys
-extern NSString * const kDMMSoapBoxLatestAnnouncementIDKey;
-extern NSString * const kDMMSoapBoxLatestAnnouncementURLKey;
-
-extern NSString * const kDMMSoapBoxAcceptActionURL;
-
-extern NSString * const kDMMSoapBoxAcceptButtonTitle;
-extern NSString * const kDMMSoapBoxShowAcceptButton;
-
-extern NSString * const kDMMSoapBoxAcceptButtonColorHex;
-extern NSString * const kDMMSoapBoxDismissButtonColorHex;
+static NSString * kDMMSoapBoxLatestAnnouncementIDKey  = @"soapbox_announcement_id";
+static NSString * kDMMSoapBoxLatestAnnouncementURLKey = @"soapbox_announcement_url";
+static NSString * kDMMSoapBoxAcceptActionURL          = @"soapbox_accept_url";
+static NSString * kDMMSoapBoxAcceptButtonTitle        = @"soapbox_accept_title";
+static NSString * kDMMSoapBoxShowAcceptButton         = @"soapbox_show_accept_button";
+static NSString * kDMMSoapBoxAcceptButtonColorHex     = @"soapbox_accept_color";
+static NSString * kDMMSoapBoxDismissButtonColorHex    = @"soapbox_dismiss_color";
 
 @interface DMMUserDefaults : NSObject
 
