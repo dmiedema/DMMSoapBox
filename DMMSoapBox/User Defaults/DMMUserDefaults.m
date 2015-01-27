@@ -8,22 +8,29 @@
 
 #import "DMMUserDefaults.h"
 
-NSString * const kDMMSoapBoxDefaultsSuite = @"com.danielmiedema.kDMMSoapBoxDefaultsSuite";
-
+////  Defaults Keys
 NSString * const kDMMSoapBoxDefaultsAnnouncementURL = @"kDMMSoapBoxDefaultsAnnouncementURL";
+
+NSString * const kDMMSoapBoxDefaultsSuite = @"kDMMSoapBoxDefaultsSuite";
 
 NSString * const kDMMSoapBoxDefaultsLatestAnnouncementID = @"kDMMSoapBoxDefaultsLatestAnnouncementID";
 
-NSString * const kDMMSoapBoxDefaultsLatestAnnouncementIDKey = @"soap_box_announcement_id";
+NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead = @"kDMMSoapBoxDefaultsLatestAnnouncementRead";
 
 NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementID = @"kDMMSoapBoxDefaultsLastKnownAnnouncementID";
 NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementURL = @"kDMMSoapBoxDefaultsLastKnownAnnouncementURL";
 
-NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead = @"kDMMSoapBoxDefaultsLatestAnnouncementRead";
+////  Plist Keys
+NSString * const kDMMSoapBoxLatestAnnouncementIDKey = @"soapbox_announcement_id";
+NSString * const kDMMSoapBoxLatestAnnouncementURLKey = @"soapbox_announcement_url";
 
-NSString * const kDMMSoapBoxDefaultsLatestAnnouncementURLKey = @"soap_box_announcement_url";
+NSString * const kDMMSoapBoxAcceptActionURL = @"soapbox_accept_url";
 
-NSString * const kDMMSoapBoxDefaultsAcceptActionURL = @"kDMMSoapBoxDefaultsAcceptActionURL";
+NSString * const kDMMSoapBoxAcceptButtonTitle = @"soapbox_accept_title";
+NSString * const kDMMSoapBoxShowAcceptButton = @"soapbox_show_accept_button";
+
+NSString * const kDMMSoapBoxAcceptButtonColorHex = @"soapbox_accept_color";
+NSString * const kDMMSoapBoxDismissButtonColorHex = @"soapbox_dismiss_color";
 
 @implementation DMMUserDefaults
 
@@ -44,9 +51,9 @@ NSString * const kDMMSoapBoxDefaultsAcceptActionURL = @"kDMMSoapBoxDefaultsAccep
 #pragma mark - Properties
 + (void)markLastAnnouncementAsRead {
     [[DMMUserDefaults soapboxDefaults] setBool:YES forKey:kDMMSoapBoxDefaultsLatestAnnouncementRead];
-    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxDefaultsLatestAnnouncementURLKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementID];
-    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxDefaultsLatestAnnouncementIDKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementURL];
-    [[DMMUserDefaults soapboxDefaults] removeObjectForKey:kDMMSoapBoxDefaultsAcceptActionURL];
+    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxLatestAnnouncementURLKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementID];
+    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxLatestAnnouncementIDKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementURL];
+    [[DMMUserDefaults soapboxDefaults] removeObjectForKey:kDMMSoapBoxAcceptActionURL];
 }
 
 + (NSString *)latestAnnouncementID {
@@ -61,7 +68,7 @@ NSString * const kDMMSoapBoxDefaultsAcceptActionURL = @"kDMMSoapBoxDefaultsAccep
 }
 
 + (NSURL *)acceptActionURL {
-    return [NSURL URLWithString:[[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsAcceptActionURL]];
+    return [NSURL URLWithString:[[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxAcceptActionURL]];
 }
 
 @end

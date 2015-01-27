@@ -8,17 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+////  Defaults Keys
 extern NSString * const kDMMSoapBoxDefaultsAnnouncementURL;
 
 extern NSString * const kDMMSoapBoxDefaultsSuite;
 
 extern NSString * const kDMMSoapBoxDefaultsLatestAnnouncementID;
 
-extern NSString * const kDMMSoapBoxDefaultsLatestAnnouncementIDKey;
-
-extern NSString * const kDMMSoapBoxDefaultsLatestAnnouncementURLKey;
-
 extern NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead;
+
+////  Plist Keys
+extern NSString * const kDMMSoapBoxLatestAnnouncementIDKey;
+extern NSString * const kDMMSoapBoxLatestAnnouncementURLKey;
+
+extern NSString * const kDMMSoapBoxAcceptActionURL;
 
 extern NSString * const kDMMSoapBoxAcceptButtonTitle;
 extern NSString * const kDMMSoapBoxShowAcceptButton;

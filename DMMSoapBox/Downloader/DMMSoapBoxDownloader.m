@@ -21,20 +21,20 @@ void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
     
     BOOL announcementIDSet = NO;
     BOOL announcementURLSet = NO;
-    if ([keys containsObject:kDMMSoapBoxDefaultsLatestAnnouncementIDKey]) {
-        [[DMMUserDefaults soapboxDefaults] setObject:defaults[kDMMSoapBoxDefaultsLatestAnnouncementIDKey] forKey:kDMMSoapBoxDefaultsLatestAnnouncementID];
+    if ([keys containsObject:kDMMSoapBoxLatestAnnouncementIDKey]) {
+        [[DMMUserDefaults soapboxDefaults] setObject:defaults[kDMMSoapBoxLatestAnnouncementIDKey] forKey:kDMMSoapBoxDefaultsLatestAnnouncementID];
         announcementIDSet = YES;
     }
-    if ([keys containsObject:kDMMSoapBoxDefaultsLatestAnnouncementURLKey]) {
-        [[DMMUserDefaults soapboxDefaults] setObject:defaults[kDMMSoapBoxDefaultsLatestAnnouncementURLKey] forKey:kDMMSoapBoxDefaultsLatestAnnouncementIDKey];
+    if ([keys containsObject:kDMMSoapBoxLatestAnnouncementURLKey]) {
+        [[DMMUserDefaults soapboxDefaults] setObject:defaults[kDMMSoapBoxLatestAnnouncementURLKey] forKey:kDMMSoapBoxLatestAnnouncementIDKey];
         announcementURLSet = YES;
     }
     if (!announcementIDSet || !announcementURLSet) {
         for (NSString *key in keys) {
             if ([key containsString:@"ID"]) {
-                [[DMMUserDefaults soapboxDefaults] setObject:defaults[key] forKey:kDMMSoapBoxDefaultsLatestAnnouncementIDKey];
+                [[DMMUserDefaults soapboxDefaults] setObject:defaults[key] forKey:kDMMSoapBoxLatestAnnouncementIDKey];
             } else if ([key containsString:@"URL"]) {
-                [[DMMUserDefaults soapboxDefaults] setObject:defaults[key] forKey:kDMMSoapBoxDefaultsLatestAnnouncementURLKey];
+                [[DMMUserDefaults soapboxDefaults] setObject:defaults[key] forKey:kDMMSoapBoxLatestAnnouncementURLKey];
             }
         }
     }
@@ -68,6 +68,7 @@ void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
 
 + (void)sharedCompletion {
     // present soapbox if there is one
+    
 }
 
 @end
