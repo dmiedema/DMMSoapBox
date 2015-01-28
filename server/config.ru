@@ -11,8 +11,8 @@ get '/defaults.plist' do
     'soapbox_announcement_url' => '/announcement',
     'soapbox_accept_url' => '/accept',
     'soapbox_show_accept_button' => true,
-    'soapbox_accept_color' => '#',
-    'soapbox_dismiss_color' => '#'
+    'soapbox_accept_color' => '#FFB300',
+    'soapbox_dismiss_color' => '#7222F2'
   }.to_plist
 end
 
