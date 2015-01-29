@@ -28,6 +28,12 @@ typedef void(^DMMCompletionBlock)(NSDictionary *defaults, NSError *error);
  */
 BOOL DMMHasNewSoapboxAnnouncement(void);
 
+/*!
+ Map values passed from plist keys to options dictionary for announcemnt presenter
+ 
+ @param defaults @c NSDictionary of plist key/values from endpoint. If @c nil this will load the @c soapboxDefaults suite as a dictionary and use those values
+ @return mapped dictionary with keys set as options for passing into @c DMMSoapboxPresenterViewController
+ */
 NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults);
 
 @interface DMMSoapBoxDownloader : NSObject

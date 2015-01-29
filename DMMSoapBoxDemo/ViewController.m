@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DMMSoapBoxDownloader.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    [DMMSoapBoxDownloader downloadAnnouncementsFromURL:[NSURL URLWithString:@"http://localhost:4567/defaults.plist"] complete:^(NSDictionary *defaults, NSError *error) {
+        if (!error && defaults) {
+            NSLog(@"defaults: %@", defaults);
+            [self presentAnnouncementWithDefaults:defaults];
+        } else {
+            NSLog(@"error: %@ %@", error, error.userInfo);
+        }
+        
+    }];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
+- (void)presentAnnouncementWithDefaults:(NSDictionary *)defaults {
+    NSURL *url = defaults[kDMMSoapBoxLatestAnnouncementURLKey];
+    NSDictionary *options = DMMDefaultsToOptionsDictionary(defaults);
+    
+    DMMSoapBoxPresenterViewController *soapbox = [DMMSoapBoxPresenterViewController presentURL:url withOptions:options];
+    
+    [self presentViewController:soapbox animated:YES completion:^{
+        
+    }];
+}
 @end
