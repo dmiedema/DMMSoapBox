@@ -7,10 +7,9 @@
 //
 
 #import "DMMSoapBoxDownloader.h"
-#import "DMMSoapBoxPresenterViewController.h"
-#import "DMMUserDefaults.h"
 #import "NSString+DMMMD5.h"
 #import "NSUserDefaults+GroundControl.h"
+#import <Colours/Colours.h>
 
 @interface DMMSoapBoxDownloader()
 
@@ -19,6 +18,24 @@
 BOOL DMMHasNewSoapboxAnnouncement(void) {
     return ![[DMMUserDefaults lastReadAnnouncementID] isEqualToString:[DMMUserDefaults latestAnnouncementID]];
 }
+
+NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults) {
+    if (!defaults) {
+        defaults = [DMMUserDefaults soapboxDefaults].dictionaryRepresentation;
+    }
+    
+    NSMutableDictionary *options = [@{} mutableCopy];
+    options[kDMMSoapBoxPresenterAcceptButtonText] = defaults[kDMMSoapBoxAcceptButtonTitle] ?: nil;
+    
+    options[kDMMSoapBoxPresenterShowAcceptButton] = defaults[kDMMSoapBoxShowAcceptButton] ?: @NO;
+    
+    options[kDMMSoapBoxPresenterAcceptButtonColor] = defaults[kDMMSoapBoxAcceptButtonColorHex] ? [UIColor colorFromHexString:defaults[kDMMSoapBoxAcceptButtonColorHex]] : [UIColor whiteColor];
+    
+    options[kDMMSoapBoxPresenterDismissButtonColor] = defaults[kDMMSoapBoxDismissButtonColorHex] ? [UIColor colorFromHexString:defaults[kDMMSoapBoxDismissButtonColorHex]] : [UIColor darkGrayColor];
+    
+    return [options copy];
+}
+
 
 void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults);
 void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {

@@ -8,6 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+// Import in .h file so that only one file must be
+// imported by the consumer
+#import "DMMSoapBoxPresenterViewController.h"
+#import "DMMUserDefaults.h"
+
 /*!
  Completion block to when downloading plist completes
  
@@ -22,6 +27,8 @@ typedef void(^DMMCompletionBlock)(NSDictionary *defaults, NSError *error);
  @return @c YES if there is, @c NO if there is not
  */
 BOOL DMMHasNewSoapboxAnnouncement(void);
+
+NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults);
 
 @interface DMMSoapBoxDownloader : NSObject
 
