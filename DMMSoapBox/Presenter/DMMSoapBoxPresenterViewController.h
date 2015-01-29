@@ -10,6 +10,8 @@
 /// typedef to define a block that returns void and takes no arguments
 typedef void(^DMMVoidBlock)(void);
 
+/// Key for options dictionary to set web configuration options
+extern NSString * const kDMMSoapBoxPresenterWebConfiguration;
 /// Key for options dictionary to set if accept button should be shown. Expects a @c BOOL type
 extern NSString * const kDMMSoapBoxPresenterShowAcceptButton;
 /// Key for options dictionary to set accept button text. Expects a @c NSString type

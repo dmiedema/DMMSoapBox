@@ -11,6 +11,7 @@
 #import <Colours/Colours.h>
 @import WebKit;
 
+NSString * const kDMMSoapBoxPresenterWebConfiguration   = @"kDMMSoapBoxPresenterWebConfiguration";
 NSString * const kDMMSoapBoxPresenterShowAcceptButton   = @"kDMMSoapBoxPresenterShowAcceptButton";
 NSString * const kDMMSoapBoxPresenterAcceptButtonText   = @"kDMMSoapBoxPresenterAcceptButtonText";
 NSString * const kDMMSoapBoxPresenterAcceptButtonColor  = @"kDMMSoapBoxPresenterAcceptButtonColor";
@@ -31,6 +32,9 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 + (instancetype)presentURL:(NSURL *)url withOptions:(NSDictionary *)options {
     DMMSoapBoxPresenterViewController *controller = [[DMMSoapBoxPresenterViewController alloc] init];
     
+    if (options[kDMMSoapBoxPresenterWebConfiguration]) {
+        controller.webViewConfiguration = options[kDMMSoapBoxPresenterWebConfiguration];
+    }
     if ([options[kDMMSoapBoxShowAcceptButton] boolValue]) {
         controller.showAcceptButton = YES;
     }
