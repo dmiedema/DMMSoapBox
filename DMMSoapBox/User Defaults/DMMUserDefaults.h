@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 ////  Defaults Keys
+/// Base URL to append all paths to. Paths given for keys should be relative to this base URL
+extern NSString * const kDMMSoapBoxDefaultsBaseURL;
 /// Default Announcement URL to check
 extern NSString * const kDMMSoapBoxDefaultsAnnouncementURL;
 /// Custom @c NSUserDefaults Suite name
@@ -21,10 +23,10 @@ extern NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead;
 ////  Plist Keys
 /// Key to represent the announcement ID. Checked for in the Plist
 static NSString * kDMMSoapBoxLatestAnnouncementIDKey  = @"soapbox_announcement_id";
-/// Key to represent the announcement ID. Checked for in the Plist
+/// Key to represent the announcement ID. Checked for in the Plist. Should be relative to @c kDMMSoapBoxDefaultsBaseURL
 static NSString * kDMMSoapBoxLatestAnnouncementURLKey = @"soapbox_announcement_url";
 /// Key to represent the accept action URL to load. Only used if there
-/// no accept block specified. Checked for in the Plist
+/// no accept block specified. Checked for in the Plist. Should be relative to @c kDMMSoapBoxDefaultsBaseURL
 static NSString * kDMMSoapBoxAcceptActionURL          = @"soapbox_accept_url";
 /// Key to represent the accept button title. Checked for in the Plist
 static NSString * kDMMSoapBoxAcceptButtonTitle        = @"soapbox_accept_title";
@@ -34,6 +36,16 @@ static NSString * kDMMSoapBoxShowAcceptButton         = @"soapbox_show_accept_bu
 static NSString * kDMMSoapBoxAcceptButtonColorHex     = @"soapbox_accept_color";
 /// Key to represent the dimiss button color. Checked for in the Plist
 static NSString * kDMMSoapBoxDismissButtonColorHex    = @"soapbox_dismiss_color";
+
+/*!
+ Create a @c NSString path for a relative url appended to the set base URL
+ 
+ @warning @c setBaseURL: must be set before using this method.
+ 
+ @param path relative path to append to base url
+ @return full URL path
+ */
+NSString * DMMURLForRelativePath(NSString *path);
 
 @interface DMMUserDefaults : NSObject
 
@@ -57,6 +69,15 @@ static NSString * kDMMSoapBoxDismissButtonColorHex    = @"soapbox_dismiss_color"
  @note stored in @c soapboxDefaults suite
  */
 + (void)markLastAnnouncementAsRead;
+
+/*!
+ Set the base URL for all URL paths.
+ 
+ This value will be prepended to all urls received from the plist
+ 
+ @param baseURL base URL string to prepend to all url requests
+ */
++ (void)setBaseURL:(NSString *)baseURL;
 
 /*!
  Retrieve the latest announcement ID we've received

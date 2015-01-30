@@ -29,8 +29,10 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 
 @implementation DMMSoapBoxPresenterViewController
 
-+ (instancetype)presentURL:(NSURL *)url withOptions:(NSDictionary *)options {
++ (instancetype)presentRelativeURL:(NSString *)url withOptions:(NSDictionary *)options {
     DMMSoapBoxPresenterViewController *controller = [[DMMSoapBoxPresenterViewController alloc] init];
+    
+    controller.announcementURL = [NSURL URLWithString:DMMURLForRelativePath(url)];
     
     if (options[kDMMSoapBoxPresenterWebConfiguration]) {
         controller.webViewConfiguration = options[kDMMSoapBoxPresenterWebConfiguration];
@@ -57,16 +59,21 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 #pragma mark - View Life Cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view addSubview:self.webView];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.view addSubview:self.webView];
     [self.view addSubview:self.acceptButton];
     [self.view addSubview:self.dismissButton];
     [self.view addConstraints:[self acceptButtonConstraints]];
     [self.view addConstraints:[self dismissButtonConstraints]];
     [self.view addConstraints:[self webViewContraints]];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self loadRequest];
 }
 
 #pragma mark - Getters

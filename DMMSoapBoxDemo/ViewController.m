@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [DMMSoapBoxDownloader downloadAnnouncementsFromURL:[NSURL URLWithString:@"http://localhost:4567/defaults.plist"] complete:^(NSDictionary *defaults, NSError *error) {
+    [DMMSoapBoxDownloader downloadAnnouncementsFromURL:[NSURL URLWithString:DMMURLForRelativePath(@"/defaults.plist")] complete:^(NSDictionary *defaults, NSError *error) {
         if (!error && defaults) {
             NSLog(@"defaults: %@", defaults);
             [self presentAnnouncementWithDefaults:defaults];
@@ -31,10 +31,10 @@
 
 
 - (void)presentAnnouncementWithDefaults:(NSDictionary *)defaults {
-    NSURL *url = defaults[kDMMSoapBoxLatestAnnouncementURLKey];
+    NSString *url = defaults[kDMMSoapBoxLatestAnnouncementURLKey];
     NSDictionary *options = DMMDefaultsToOptionsDictionary(defaults);
     
-    DMMSoapBoxPresenterViewController *soapbox = [DMMSoapBoxPresenterViewController presentURL:url withOptions:options];
+    DMMSoapBoxPresenterViewController *soapbox = [DMMSoapBoxPresenterViewController presentRelativeURL:url withOptions:options];
     
     [self presentViewController:soapbox animated:YES completion:^{
         

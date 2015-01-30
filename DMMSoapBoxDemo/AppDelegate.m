@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "DMMUserDefaults.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [DMMUserDefaults setBaseURL:@"http://localhost:4567"];
     return YES;
 }
 

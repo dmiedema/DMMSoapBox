@@ -5,6 +5,12 @@ html {
 .center {
   text-align: center; }
 
+.purple {
+  background-color: #A95AD7; }
+
+.blue {
+  background-color: #5AB2D7; }
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   /* Styles for mobile */ }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {

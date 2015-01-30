@@ -40,10 +40,10 @@ extern NSString * const kDMMSoapBoxPresenterAcceptButtonBlock;
 /*!
  Create a @c DMMSoapBoxPresenterViewController with specified URL and options alreay applied
  
- @param url     url to load.
+ @param url     relative url to load. URL must be relative to @c baseURL set on @c DMMUserDefaults
  @param options options dictionary to apply values with
  
  @return a @c DMMSoapBoxPresenterViewController with specified URL and options applied
  */
-+ (instancetype)presentURL:(NSURL *)url withOptions:(NSDictionary *)options;
++ (instancetype)presentRelativeURL:(NSString *)url withOptions:(NSDictionary *)options;
 @end

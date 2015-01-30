@@ -9,6 +9,7 @@
 #import "DMMUserDefaults.h"
 
 ////  Defaults Keys
+NSString * const kDMMSoapBoxDefaultsBaseURL                  = @"kDMMSoapBoxDefaultsBaseURL";
 NSString * const kDMMSoapBoxDefaultsAnnouncementURL          = @"kDMMSoapBoxDefaultsAnnouncementURL";
 
 NSString * const kDMMSoapBoxDefaultsSuite                    = @"kDMMSoapBoxDefaultsSuite";
@@ -19,6 +20,12 @@ NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead   = @"kDMMSoapBoxDefa
 
 NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementID  = @"kDMMSoapBoxDefaultsLastKnownAnnouncementID";
 NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementURL = @"kDMMSoapBoxDefaultsLastKnownAnnouncementURL";
+
+
+NSString * DMMURLForRelativePath(NSString *path) {
+    NSString *base = [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsBaseURL];
+    return [NSString stringWithFormat:@"%@%@", base, path];
+}
 
 @implementation DMMUserDefaults
 
@@ -44,6 +51,10 @@ NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementURL = @"kDMMSoapBoxDefa
     [[DMMUserDefaults soapboxDefaults] removeObjectForKey:kDMMSoapBoxAcceptActionURL];
 }
 
++ (void)setBaseURL:(NSString *)baseURL {
+    [[DMMUserDefaults soapboxDefaults] setObject:baseURL forKey:kDMMSoapBoxDefaultsBaseURL];
+}
+
 + (NSString *)latestAnnouncementID {
     return [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsLatestAnnouncementID];
 }
@@ -52,11 +63,11 @@ NSString * const kDMMSoapBoxDefaultsLastKnownAnnouncementURL = @"kDMMSoapBoxDefa
 }
 
 + (NSURL *)announcementURL {
-    return [NSURL URLWithString:[[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsAnnouncementURL]];
+    return [NSURL URLWithString:DMMURLForRelativePath([[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsAnnouncementURL])];
 }
 
 + (NSURL *)acceptActionURL {
-    return [NSURL URLWithString:[[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxAcceptActionURL]];
+    return [NSURL URLWithString:DMMURLForRelativePath([[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxAcceptActionURL])];
 }
 
 @end
