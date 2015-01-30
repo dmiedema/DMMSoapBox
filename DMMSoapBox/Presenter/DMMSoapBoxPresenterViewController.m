@@ -73,6 +73,7 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 - (UIButton *)acceptButton {
     if (!_acceptButton) {
         _acceptButton = [UIButton buttonWithType:UIButtonTypeSystem];
+        _acceptButton.translatesAutoresizingMaskIntoConstraints = NO;
         NSString *title = self.acceptButtonText ?: NSLocalizedString(@"Accept", @"Accept");
         [_acceptButton setTitle:title forState:UIControlStateNormal];
         _acceptButton.backgroundColor = self.acceptButtonColor;
@@ -83,7 +84,8 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 - (UIButton *)dismissButton {
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeSystem];
-        NSString *title = self.acceptButtonText ?: NSLocalizedString(@"Accept", @"Accept");
+        _dismissButton.translatesAutoresizingMaskIntoConstraints = NO;
+        NSString *title = self.acceptButtonText ?: NSLocalizedString(@"Dismiss", @"Dismiss");
         [_dismissButton setTitle:title forState:UIControlStateNormal];
         [_dismissButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _dismissButton.backgroundColor = self.dismissButtonColor ?: [UIColor darkGrayColor];
@@ -95,6 +97,7 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 - (WKWebView *)webView {
     if (!_webView) {
         _webView = [[WKWebView alloc] initWithFrame:self.view.bounds configuration:self.webViewConfiguration];
+        _webView.translatesAutoresizingMaskIntoConstraints = NO;
     }
     return _webView;
 }
@@ -166,7 +169,7 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     NSLayoutConstraint *height = [NSLayoutConstraint constraintWithItem:self.dismissButton attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:40];
     NSLayoutConstraint *left = [NSLayoutConstraint constraintWithItem:self.dismissButton attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.dismissButton.superview attribute:NSLayoutAttributeLeft multiplier:1 constant:0];
     NSLayoutConstraint *right = [NSLayoutConstraint constraintWithItem:self.dismissButton attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.dismissButton.superview attribute:NSLayoutAttributeRight multiplier:1 constant:0];
-    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.dismissButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.dismissButton.superview attribute:NSLayoutAttributeTop multiplier:1 constant:0];
+    NSLayoutConstraint *bottom = [NSLayoutConstraint constraintWithItem:self.dismissButton attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.dismissButton.superview attribute:NSLayoutAttributeBottomMargin multiplier:1 constant:0];
     
     return @[height, bottom, left, right];
 }
