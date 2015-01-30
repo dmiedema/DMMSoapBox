@@ -62,6 +62,8 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.view addSubview:self.acceptButton];
+    [self.view addSubview:self.dismissButton];
     [self.view addConstraints:[self acceptButtonConstraints]];
     [self.view addConstraints:[self dismissButtonConstraints]];
     [self.view addConstraints:[self webViewContraints]];

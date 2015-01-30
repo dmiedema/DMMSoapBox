@@ -25,7 +25,9 @@ NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults) {
     }
     
     NSMutableDictionary *options = [@{} mutableCopy];
-    options[kDMMSoapBoxPresenterAcceptButtonText] = defaults[kDMMSoapBoxAcceptButtonTitle] ?: nil;
+    if (defaults[kDMMSoapBoxAcceptButtonTitle]) {
+        options[kDMMSoapBoxPresenterAcceptButtonText] = defaults[kDMMSoapBoxAcceptButtonTitle];
+    }
     
     options[kDMMSoapBoxPresenterShowAcceptButton] = defaults[kDMMSoapBoxShowAcceptButton] ?: @NO;
     
