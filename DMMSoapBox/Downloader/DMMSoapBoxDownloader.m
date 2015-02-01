@@ -15,27 +15,10 @@
 
 @end
 
-BOOL DMMHasNewSoapboxAnnouncement(void) {
-    return ![[DMMUserDefaults lastReadAnnouncementID] isEqualToString:[DMMUserDefaults latestAnnouncementID]];
-}
-
-NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults) {
-    if (!defaults) {
-        defaults = [DMMUserDefaults soapboxDefaults].dictionaryRepresentation;
-    }
-    
-    NSMutableDictionary *options = [@{} mutableCopy];
-    if (defaults[kDMMSoapBoxAcceptButtonTitle]) {
-        options[kDMMSoapBoxPresenterAcceptButtonText] = defaults[kDMMSoapBoxAcceptButtonTitle];
-    }
-    
-    options[kDMMSoapBoxPresenterShowAcceptButton] = defaults[kDMMSoapBoxShowAcceptButton] ?: @NO;
-    
-    options[kDMMSoapBoxPresenterAcceptButtonColor] = defaults[kDMMSoapBoxAcceptButtonColorHex] ? [UIColor colorFromHexString:defaults[kDMMSoapBoxAcceptButtonColorHex]] : [UIColor whiteColor];
-    
-    options[kDMMSoapBoxPresenterDismissButtonColor] = defaults[kDMMSoapBoxDismissButtonColorHex] ? [UIColor colorFromHexString:defaults[kDMMSoapBoxDismissButtonColorHex]] : [UIColor darkGrayColor];
-    
-    return [options copy];
+#pragma mark - Private Functions
+NSString * DMMUserLibraryPath(void);
+NSString * DMMUserLibraryPath(void) {
+    return (NSString *)NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES).firstObject;
 }
 
 
@@ -64,6 +47,41 @@ void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
     }
 }
 
+#pragma mark - Public Fuctions
+BOOL DMMHasNewSoapboxAnnouncement(void) {
+    return ![[DMMUserDefaults lastReadAnnouncementID] isEqualToString:[DMMUserDefaults latestAnnouncementID]];
+}
+
+NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults) {
+    if (!defaults) {
+        defaults = [DMMUserDefaults soapboxDefaults].dictionaryRepresentation;
+    }
+    
+    NSMutableDictionary *options = [@{} mutableCopy];
+    if (defaults[kDMMSoapBoxAcceptButtonTitle]) {
+        options[kDMMSoapBoxPresenterAcceptButtonText] = defaults[kDMMSoapBoxAcceptButtonTitle];
+    }
+    
+    options[kDMMSoapBoxPresenterShowAcceptButton] = defaults[kDMMSoapBoxShowAcceptButton] ?: @NO;
+    
+    options[kDMMSoapBoxPresenterAcceptButtonColor] = defaults[kDMMSoapBoxAcceptButtonColorHex] ? [UIColor colorFromHexString:defaults[kDMMSoapBoxAcceptButtonColorHex]] : [UIColor whiteColor];
+    
+    options[kDMMSoapBoxPresenterDismissButtonColor] = defaults[kDMMSoapBoxDismissButtonColorHex] ? [UIColor colorFromHexString:defaults[kDMMSoapBoxDismissButtonColorHex]] : [UIColor darkGrayColor];
+    
+    return [options copy];
+}
+
+static NSString * kDMMSoapboxFileName = @"kDMMSoapboxDictionary.soapbox";
+NSString * DMMSoapboxArchivePath(void) {
+    NSString *libraryPath = DMMUserLibraryPath();
+    return [libraryPath stringByAppendingString:kDMMSoapboxFileName];
+}
+
+NSDictionary * DMMSoapboxDictionary(void) {
+    return (NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithFile:DMMSoapboxArchivePath()];
+}
+
+#pragma mark -
 @implementation DMMSoapBoxDownloader
 
 + (void)checkForAnnouncementsWithCompletion:(DMMCompletionBlock)completion {
@@ -74,6 +92,9 @@ void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
 + (void)downloadAnnouncementsFromURL:(NSURL *)url complete:(DMMCompletionBlock)completion {
     [[DMMUserDefaults soapboxDefaults] registerDefaultsWithURL:url success:^(NSDictionary *defaults) {
         DMMSetValuesFromDefaultsIntoSoapBoxDefaults(defaults);
+        if (![NSKeyedArchiver archiveRootObject:defaults toFile:DMMSoapboxArchivePath()]) {
+            NSLog(@"DMMSoapboxDownloader [ERROR] - Error archiving `defaults` to library path");
+        }
         if (completion) { completion(defaults, nil); }
     } failure:^(NSError *error) {
         if (completion) { completion(nil, error); }

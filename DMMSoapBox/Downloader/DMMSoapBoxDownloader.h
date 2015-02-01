@@ -36,6 +36,22 @@ BOOL DMMHasNewSoapboxAnnouncement(void);
  */
 NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults);
 
+/*!
+ Get the path of the file archvie as a string
+ 
+ @return NSString representation of the file path where the defaults plist is archived to
+ */
+NSString * DMMSoapboxArchivePath(void);
+
+/*!
+ Load the downloaded plist dictionary
+ 
+ @return NSDictionary representation of the plist downloaded from the given endpoint
+ */
+NSDictionary * DMMSoapboxDictionary(void);
+
+/*!
+ */
 @interface DMMSoapBoxDownloader : NSObject
 
 /*!
