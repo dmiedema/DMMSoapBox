@@ -31,6 +31,8 @@ BOOL DMMHasNewSoapboxAnnouncement(void);
 /*!
  Map values passed from plist keys to options dictionary for announcemnt presenter
  
+ @see DMMSoapboxDictionary to load the defaults as they were archived to disk
+ 
  @param defaults @c NSDictionary of plist key/values from endpoint. If @c nil this will load the @c soapboxDefaults suite as a dictionary and use those values
  @return mapped dictionary with keys set as options for passing into @c DMMSoapboxPresenterViewController
  */
