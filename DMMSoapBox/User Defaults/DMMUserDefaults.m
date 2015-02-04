@@ -46,8 +46,8 @@ NSString * DMMURLForRelativePath(NSString *path) {
 #pragma mark - Properties
 + (void)markLastAnnouncementAsRead {
     [[DMMUserDefaults soapboxDefaults] setBool:YES forKey:kDMMSoapBoxDefaultsLatestAnnouncementRead];
-    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxLatestAnnouncementURLKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementID];
-    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxLatestAnnouncementIDKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementURL];
+    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxLatestAnnouncementURLKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementURL];
+    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxLatestAnnouncementIDKey] forKey:kDMMSoapBoxDefaultsLastKnownAnnouncementID];
     [[DMMUserDefaults soapboxDefaults] removeObjectForKey:kDMMSoapBoxAcceptActionURL];
 }
 
@@ -63,7 +63,7 @@ NSString * DMMURLForRelativePath(NSString *path) {
     return [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsLatestAnnouncementID];
 }
 + (NSString *)lastReadAnnouncementID {
-    return [[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxDefaultsLastKnownAnnouncementID];
+    return [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsLastKnownAnnouncementID];
 }
 
 + (NSURL *)announcementURL {

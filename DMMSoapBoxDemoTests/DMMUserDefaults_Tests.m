@@ -22,12 +22,12 @@
     NSString *baseURL = @"baseURL";
     [DMMUserDefaults setBaseURL:baseURL];
     
-    NSString *defaultsURL = [DMMUserDefaults baseURL]; 
+    NSString *defaultsURL = [DMMUserDefaults baseURL];
     XCTAssertTrue([baseURL isEqualToString:defaultsURL], @"'%@' should equal '%@'", baseURL, defaultsURL);
 }
 
 - (void)testMarksLastAnnouncementAsRead {
-    [[DMMUserDefaults soapboxDefaults] setObject:@"1" forKey:kDMMSoapBoxLatestAnnouncementURLKey];
+    [[DMMUserDefaults soapboxDefaults] setObject:@"1" forKey:kDMMSoapBoxDefaultsLatestAnnouncementID];
     
     XCTAssertTrue([@"1" isEqualToString:[DMMUserDefaults latestAnnouncementID]], @"Latest announcement ID should be '1'. Instead was %@", [DMMUserDefaults latestAnnouncementID]);
     XCTAssertNil([DMMUserDefaults lastReadAnnouncementID], @"There should be no 'lastReadAnnouncementID'");
