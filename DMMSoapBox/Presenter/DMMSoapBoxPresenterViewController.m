@@ -37,9 +37,11 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     if (options[kDMMSoapBoxPresenterWebConfiguration]) {
         controller.webViewConfiguration = options[kDMMSoapBoxPresenterWebConfiguration];
     }
-    if ([options[kDMMSoapBoxShowAcceptButton] boolValue]) {
-        controller.showAcceptButton = YES;
-    }
+    
+//    if (options[kDMMSoapBoxPresenterShowAcceptButton]) {
+    controller.showAcceptButton = [options[kDMMSoapBoxPresenterShowAcceptButton] boolValue];
+//    }
+    
     if (options[kDMMSoapBoxPresenterAcceptButtonText]) {
         controller.acceptButtonText = options[kDMMSoapBoxPresenterAcceptButtonText];
     }
@@ -136,30 +138,25 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     return [NSURLRequest requestWithURL:self.announcementURL];
 }
 
-- (BOOL)showAcceptButton {
-    return _showAcceptButton || [DMMUserDefaults acceptActionURL];
+#pragma mark - Setters
+- (void)setAnnouncementURL:(NSURL *)announcementURL {
+    _announcementURL = announcementURL;
+    [self loadRequest];
 }
 
-#pragma mark - Setters
 - (void)setAcceptButtonColor:(UIColor *)acceptButtomColor {
     _acceptButtonColor = acceptButtomColor;
-    if ([_acceptButtonColor distanceFromColor:[UIColor whiteColor]] >
-        [_acceptButtonColor distanceFromColor:[UIColor blackColor]]) {
-        [self setAcceptButtonTitleColorDark];
-    } else {
-        [self setAcceptButtonTitleColorLight];
-    }
+    
+    [self setButtonTitleColor:[_acceptButtonColor blackOrWhiteContrastingColor] button:self.acceptButton];
+    
     self.acceptButton.backgroundColor = _acceptButtonColor;
 }
 
 - (void)setDismissButtonColor:(UIColor *)dismissButtomColor {
     _dismissButtonColor = dismissButtomColor;
-    if ([_dismissButtonColor distanceFromColor:[UIColor whiteColor]] >
-        [_dismissButtonColor distanceFromColor:[UIColor blackColor]]) {
-        [self setDismissButtonTitleColorDark];
-    } else {
-        [self setDismissButtonTitleColorLight];
-    }
+    
+    [self setButtonTitleColor:[_dismissButtonColor blackOrWhiteContrastingColor] button:self.dismissButton];
+    
     self.dismissButton.backgroundColor = _dismissButtonColor;
 }
 
@@ -195,29 +192,8 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     
     return @[height, bottom, left, right];
 }
-#pragma mark - Setters
-- (void)setAnnouncementURL:(NSURL *)announcementURL {
-    _announcementURL = announcementURL;
-    [self loadRequest];
-}
 
 #pragma mark - Implementation
-
-- (void)setAcceptButtonTitleColorLight {
-    [self setButtonTitleColor:[UIColor whiteColor] button:self.acceptButton];
-}
-- (void)setAcceptButtonTitleColorDark {
-    [self setButtonTitleColor:[UIColor blackColor] button:self.acceptButton];
-}
-
-- (void)setDismissButtonTitleColorLight {
-    [self setButtonTitleColor:[UIColor whiteColor] button:self.dismissButton];
-}
-
-- (void)setDismissButtonTitleColorDark {
-    [self setButtonTitleColor:[UIColor blackColor] button:self.dismissButton];
-}
-
 - (void)setButtonTitleColor:(UIColor *)color button:(UIButton *)button {
     [button setTitleColor:color forState:UIControlStateNormal];
 }
