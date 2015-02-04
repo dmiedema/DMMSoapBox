@@ -38,14 +38,36 @@
     XCTAssertTrue( lastID && [@"1" isEqualToString:lastID], @"Last read ID should be '1' and should be set. Instead was %@", lastID);
 }
 
-- (void)testAnnouncementURLReturnsCorrectly {
-    [DMMUserDefaults soapboxDefaults];
-    
+- (void)testAnnouncementURLReturnsCorrectlyWithFullURL {
+    NSString *fullAnnoucementURL = @"http://this.is.a/full/url";
+    [[DMMUserDefaults soapboxDefaults] setObject:fullAnnoucementURL forKey:kDMMSoapBoxDefaultsAnnouncementURL];
+    XCTAssertTrue([[DMMUserDefaults announcementURL].absoluteString isEqualToString:fullAnnoucementURL], @"");
 }
 
-- (void)testAcceptActionURLReturnsCorrectly {
-    [DMMUserDefaults soapboxDefaults];
+- (void)testAnnoucementURLReturnsCorrectlyWithPartialURL {
+    NSString *baseURL = @"baseURL";
+    [DMMUserDefaults setBaseURL:baseURL];
+    NSString *partialAnnoucementURL = @"/annoucement";
+    NSString *fullURL = [NSString stringWithFormat:@"%@%@", baseURL, partialAnnoucementURL];
+    [[DMMUserDefaults soapboxDefaults] setObject:partialAnnoucementURL forKey:kDMMSoapBoxDefaultsAnnouncementURL];
     
+    XCTAssertTrue([[DMMUserDefaults announcementURL].absoluteString isEqualToString:fullURL], @"");
+}
+
+- (void)testAcceptActionURLReturnsCorrectlyWithFullURL {
+    NSString *fullAnnoucementURL = @"http://this.is.a/full/url";
+    [[DMMUserDefaults soapboxDefaults] setObject:fullAnnoucementURL forKey:kDMMSoapBoxAcceptActionURL];
+    XCTAssertTrue([[DMMUserDefaults acceptActionURL].absoluteString isEqualToString:fullAnnoucementURL], @"");
+}
+
+- (void)testAcceptActionURLReturnsCorrectlyWithPartialURL {
+    NSString *baseURL = @"baseURL";
+    [DMMUserDefaults setBaseURL:baseURL];
+    NSString *partialAnnoucementURL = @"/annoucement";
+    NSString *fullURL = [NSString stringWithFormat:@"%@%@", baseURL, partialAnnoucementURL];
+    [[DMMUserDefaults soapboxDefaults] setObject:partialAnnoucementURL forKey:kDMMSoapBoxAcceptActionURL];
+    
+    XCTAssertTrue([[DMMUserDefaults acceptActionURL].absoluteString isEqualToString:fullURL], @"");
 }
 
 #pragma mark -

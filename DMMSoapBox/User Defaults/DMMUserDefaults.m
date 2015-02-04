@@ -65,14 +65,19 @@ NSString * DMMURLForRelativePath(NSString *path) {
 + (NSURL *)announcementURL {
     NSString *announcementPath = [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsAnnouncementURL];
     NSURL *announcementURL = [NSURL URLWithString:announcementPath];
-    if (![announcementURL absoluteURL]) {
+    if (![announcementURL host]) {
         announcementPath = DMMURLForRelativePath(announcementPath);
     }
     return [NSURL URLWithString:announcementPath];
 }
 
 + (NSURL *)acceptActionURL {
-    return [NSURL URLWithString:DMMURLForRelativePath([[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxAcceptActionURL])];
+    NSString *acceptPath = [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxAcceptActionURL];
+    NSURL *acceptURL = [NSURL URLWithString:acceptPath];
+    if (![acceptURL host]) {
+        acceptPath = DMMURLForRelativePath(acceptPath);
+    }
+    return [NSURL URLWithString:acceptPath];
 }
 
 @end
