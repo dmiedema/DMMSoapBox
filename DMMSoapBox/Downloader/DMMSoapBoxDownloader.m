@@ -26,16 +26,9 @@ void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults);
 void DMMSetValuesFromDefaultsIntoSoapBoxDefaults(NSDictionary *defaults) {
     NSSet *keys = [NSSet setWithArray:defaults.allKeys];
     
-    BOOL announcementIDSet = NO;
-    BOOL announcementURLSet = NO;
-    if ([keys containsObject:kDMMSoapBoxLatestAnnouncementIDKey]) {
-        [[DMMUserDefaults soapboxDefaults] setObject:defaults[kDMMSoapBoxLatestAnnouncementIDKey] forKey:kDMMSoapBoxDefaultsLatestAnnouncementID];
-        announcementIDSet = YES;
-    }
-    if ([keys containsObject:kDMMSoapBoxLatestAnnouncementURLKey]) {
-        [[DMMUserDefaults soapboxDefaults] setObject:defaults[kDMMSoapBoxLatestAnnouncementURLKey] forKey:kDMMSoapBoxLatestAnnouncementIDKey];
-        announcementURLSet = YES;
-    }
+    BOOL announcementIDSet = [keys containsObject:kDMMSoapBoxLatestAnnouncementIDKey];
+    BOOL announcementURLSet = [keys containsObject:kDMMSoapBoxLatestAnnouncementURLKey];
+    
     if (!announcementIDSet || !announcementURLSet) {
         for (NSString *key in keys) {
             if ([key containsString:@"ID"]) {

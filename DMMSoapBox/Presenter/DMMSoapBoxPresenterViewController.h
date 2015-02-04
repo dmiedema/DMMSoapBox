@@ -45,5 +45,25 @@ extern NSString * const kDMMSoapBoxPresenterAcceptButtonBlock;
  
  @return a @c DMMSoapBoxPresenterViewController with specified URL and options applied
  */
-+ (instancetype)presentRelativeURL:(NSString *)url withOptions:(NSDictionary *)options;
++ (instancetype)presentationControllerWithURL:(NSURL *)url options:(NSDictionary *)options;
+
+/*!
+ Present a @c DMMSoapBoxPresenterViewController with specified relative URL on the @c UIApplication keyWindow's rootViewController
+ 
+ @see DMMUserDefaults setBaseURL
+ 
+ @param url     URL relative to @c baseURL on @c DMMUserDefaults to load annoucement from.
+ @param options dictionary of options to load and apply to controller
+ */
++ (void)presentRelativeURL:(NSString *)url withOptions:(NSDictionary *)options;
+
+/*!
+ Present a @c DMMSoapBoxPresenterViewController with specified full URL on the @c UIApplication keyWindow's rootViewController
+ 
+ @see DMMUserDefaults setBaseURL
+ 
+ @param url     full URL to load annoucement from.
+ @param options dictionary of options to load and apply to controller
+ */
++ (void)presentURL:(NSString *)url withOptions:(NSDictionary *)options;
 @end

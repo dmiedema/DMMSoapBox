@@ -55,6 +55,10 @@ NSString * DMMURLForRelativePath(NSString *path) {
     [[DMMUserDefaults soapboxDefaults] setObject:baseURL forKey:kDMMSoapBoxDefaultsBaseURL];
 }
 
++ (NSString *)baseURL {
+    return [[DMMUserDefaults soapboxDefaults] objectForKey:kDMMSoapBoxDefaultsBaseURL];
+}
+
 + (NSString *)latestAnnouncementID {
     return [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsLatestAnnouncementID];
 }

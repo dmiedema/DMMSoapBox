@@ -29,10 +29,10 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 
 @implementation DMMSoapBoxPresenterViewController
 
-+ (instancetype)presentRelativeURL:(NSString *)url withOptions:(NSDictionary *)options {
++ (instancetype)presentationControllerWithURL:(NSURL *)url options:(NSDictionary *)options {
     DMMSoapBoxPresenterViewController *controller = [[DMMSoapBoxPresenterViewController alloc] init];
     
-    controller.announcementURL = [NSURL URLWithString:DMMURLForRelativePath(url)];
+    controller.announcementURL = url;
     
     if (options[kDMMSoapBoxPresenterWebConfiguration]) {
         controller.webViewConfiguration = options[kDMMSoapBoxPresenterWebConfiguration];
@@ -54,6 +54,21 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     }
     
     return controller;
+
+}
+
++ (void)presentRelativeURL:(NSString *)url withOptions:(NSDictionary *)options {
+    NSString *fullURL = DMMURLForRelativePath(url);
+
+    DMMSoapBoxPresenterViewController *controller = [self presentationControllerWithURL:[NSURL URLWithString:fullURL] options:options];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:controller animated:YES completion:nil];
+}
+
++ (void)presentURL:(NSString *)url withOptions:(NSDictionary *)options {    
+    DMMSoapBoxPresenterViewController *controller = [self presentationControllerWithURL:[NSURL URLWithString:url] options:options];
+    
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:controller animated:YES completion:nil];
 }
 
 #pragma mark - View Life Cycle

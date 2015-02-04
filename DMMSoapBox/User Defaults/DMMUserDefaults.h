@@ -80,6 +80,13 @@ NSString * DMMURLForRelativePath(NSString *path);
 + (void)setBaseURL:(NSString *)baseURL;
 
 /*!
+ Get the base URL set from @c setBaseURL:
+ 
+ @return the baseURL for paths
+ */
++ (NSString *)baseURL;
+
+/*!
  Retrieve the latest announcement ID we've received
  
  @note stored in @c soapboxDefaults suite

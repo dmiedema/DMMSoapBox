@@ -22,7 +22,7 @@
     NSString *baseURL = @"baseURL";
     [DMMUserDefaults setBaseURL:baseURL];
     
-    NSString *defaultsURL = [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsBaseURL];
+    NSString *defaultsURL = [DMMUserDefaults baseURL]; 
     XCTAssertTrue([baseURL isEqualToString:defaultsURL], @"'%@' should equal '%@'", baseURL, defaultsURL);
 }
 
@@ -68,14 +68,6 @@
     [[DMMUserDefaults soapboxDefaults] setObject:partialAnnoucementURL forKey:kDMMSoapBoxAcceptActionURL];
     
     XCTAssertTrue([[DMMUserDefaults acceptActionURL].absoluteString isEqualToString:fullURL], @"");
-}
-
-#pragma mark -
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
 }
 
 #pragma mark - Setup

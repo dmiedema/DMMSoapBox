@@ -34,7 +34,7 @@
     NSString *url = defaults[kDMMSoapBoxLatestAnnouncementURLKey];
     NSDictionary *options = DMMDefaultsToOptionsDictionary(defaults);
     
-    DMMSoapBoxPresenterViewController *soapbox = [DMMSoapBoxPresenterViewController presentRelativeURL:url withOptions:options];
+    DMMSoapBoxPresenterViewController *soapbox = [DMMSoapBoxPresenterViewController presentationControllerWithURL:[NSURL URLWithString:url] options:options];
     
     [self presentViewController:soapbox animated:YES completion:^{
         
