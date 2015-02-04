@@ -1,5 +1,5 @@
 language: objective-c
-xcode_workspace: DMMSoapboxDemo.xcworkspace
-xcode_scheme: DMMSoapboxDemo
+xcode_workspace: DMMSoapBoxDemo.xcworkspace
+xcode_scheme: DMMSoapBoxDemo
 xcode_sdk:
   - iphonesimulator8.1
