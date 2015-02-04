@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-
+#import <OCMock/OCMock.h>
+#import "DMMTestHelpers.h"
 #import "DMMUserDefaults.h"
 
 @interface DMMUserDefaults_Tests : XCTestCase
@@ -17,26 +18,52 @@
 
 @implementation DMMUserDefaults_Tests
 
-- (void)setUp {
-    [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+- (void)testSettingBaseURL {
+    NSString *baseURL = @"baseURL";
+    [DMMUserDefaults setBaseURL:baseURL];
+    
+    NSString *defaultsURL = [[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxDefaultsBaseURL];
+    XCTAssertTrue([baseURL isEqualToString:defaultsURL], @"'%@' should equal '%@'", baseURL, defaultsURL);
 }
 
-- (void)tearDown {
-    // Put teardown code here. This method is called after the invocation of each test method in the class.
-    [super tearDown];
+- (void)testMarksLastAnnouncementAsRead {
+    [[DMMUserDefaults soapboxDefaults] setObject:@"1" forKey:kDMMSoapBoxLatestAnnouncementURLKey];
+    
+    XCTAssertTrue([@"1" isEqualToString:[DMMUserDefaults latestAnnouncementID]], @"Latest announcement ID should be '1'. Instead was %@", [DMMUserDefaults latestAnnouncementID]);
+    XCTAssertNil([DMMUserDefaults lastReadAnnouncementID], @"There should be no 'lastReadAnnouncementID'");
+    
+    [DMMUserDefaults markLastAnnouncementAsRead];
+    
+    NSString *lastID = [DMMUserDefaults lastReadAnnouncementID];
+    XCTAssertTrue( lastID && [@"1" isEqualToString:lastID], @"Last read ID should be '1' and should be set. Instead was %@", lastID);
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testAnnouncementURLReturnsCorrectly {
+    [DMMUserDefaults soapboxDefaults];
+    
 }
 
+- (void)testAcceptActionURLReturnsCorrectly {
+    [DMMUserDefaults soapboxDefaults];
+    
+}
+
+#pragma mark -
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+#pragma mark - Setup
+- (void)setUp {
+    [super setUp];
+}
+
+- (void)tearDown {
+    DMMTests_ResetHHAUserDefaults();
+    [super tearDown];
 }
 
 @end
