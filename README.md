@@ -55,10 +55,36 @@ And check for an announcement when you want to in your application
 
 ### Server
 
+The soapbox requires a server to give it any announcements it needs to show.
+
+Currently the soapbox relies on [GroundControl](https://github.com/mattt/GroundControl) to download the plist
+
+To run the demo server run
+
+(You may need to run `cd server && bundle install`)
+
+`$ ruby server/config.ru`
+
 #### Plist
 
 This requires a pretty specifically formatted plist file. If *some* of the keys don't match up,
 it tries its best to find just *a key* that contains either `ID` & `URL`
+
+The keys available to specify in the plist are listed in `DMMUserDefaults.h`
+
+`soapbox_announcement_id` : the ID of the announcement. If not specified a key containing `ID` will be used in place of this
+
+`soapbox_announcement_url` : url of the announcement, assumed to be relative to `kDMMSoapBoxDefaultsBaseURL`
+
+`soapbox_accept_url` : url to open if the accept button is selected. Can be relative or absolute
+
+`soapbox_accept_title` : title to show on the accept button.
+
+`soapbox_show_accept_button` : boolean to set if accept button should be shown or not
+
+`soapbox_accept_color` : hex string color to use for accept button
+
+`soapbox_dismiss_color` : hex string color to use instead of `[UIColor darkGrayColor]`
 
 ## License
 
