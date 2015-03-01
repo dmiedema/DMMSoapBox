@@ -1,6 +1,7 @@
 # DMMSoapBox
 
 [![Build Status](https://travis-ci.org/dmiedema/DMMSoapBox.svg)](https://travis-ci.org/dmiedema/DMMSoapBox)
+[![Coverage Status](https://coveralls.io/repos/dmiedema/DMMSoapBox/badge.svg)](https://coveralls.io/r/dmiedema/DMMSoapBox)
 
 [![Version](https://img.shields.io/cocoapods/v/DMMSoapBox.svg?style=flat)](http://cocoadocs.org/docsets/DMMSoapBox)
 [![License](https://img.shields.io/cocoapods/l/DMMSoapBox.svg?style=flat)](http://cocoadocs.org/docsets/DMMSoapBox)
