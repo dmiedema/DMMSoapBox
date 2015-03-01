@@ -1,0 +1,3 @@
+coverage_service: coveralls
+xcodeproj: DMMSoapBoxDemo.xcodeproj
+source_directory: DMMSoapBox
