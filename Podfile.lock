@@ -26,14 +26,14 @@ PODS:
   - OCMock (3.1.2)
 
 DEPENDENCIES:
-  - Colours
+  - Colours (~> 5.6.1)
   - GroundControl (~> 2.1.0)
   - OCMock (~> 3.1.0)
 
 SPEC CHECKSUMS:
-  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
-  Colours: ecbcbb168f7e6190b76b34df1b477c103cb638eb
-  GroundControl: 2f9024230e41ff5e5a8e3ca060ed1b74883bdd1a
-  OCMock: ecdd510b73ef397f2f97274785c1e87fd147c49f
+  AFNetworking: 96ac9bf3eda33582701cb1fcc5b896aa1e20311e
+  Colours: cad6964a7c178253356403d206eef600a3dc59c8
+  GroundControl: fbc762e0097feece7fb6d8cdc8f2747a504a6833
+  OCMock: a10ea9f0a6e921651f96f78b6faee95ebc813b92
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.38.0

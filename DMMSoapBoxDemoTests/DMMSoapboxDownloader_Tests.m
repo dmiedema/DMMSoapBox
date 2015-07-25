@@ -22,6 +22,12 @@
     // NSInvocation
 }
 
+- (void)testRegisterURLForSoapboxCheck {
+    NSString *testURLString = @"test://url";
+    [DMMSoapBoxDownloader registerURLForSoapboxCheck:testURLString];
+    XCTAssertTrue([testURLString isEqualToString:[DMMUserDefaults announcementURL].absoluteString], @"[DMMUserDefaults announcementURL] '%@' was not equal to '%@'", [DMMUserDefaults announcementURL].absoluteString, testURLString);
+}
+
 - (void)testDefaultsToOptionsDictionary {
     [self measureBlock:^{
         // DMMDefaultsToOptionsDictionary(@{})

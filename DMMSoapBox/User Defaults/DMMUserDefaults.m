@@ -9,17 +9,17 @@
 #import "DMMUserDefaults.h"
 
 ////  Defaults Keys
-NSString * const kDMMSoapBoxDefaultsBaseURL                  = @"kDMMSoapBoxDefaultsBaseURL";
-NSString * const kDMMSoapBoxDefaultsAnnouncementURL          = @"kDMMSoapBoxDefaultsAnnouncementURL";
+NSString * const kDMMSoapBoxDefaultsBaseURL                  = @"com.dmiedema.DMMSoapBoxDefaultsBaseURL";
+NSString * const kDMMSoapBoxDefaultsAnnouncementURL          = @"com.dmiedema.DMMSoapBoxDefaultsAnnouncementURL";
 
-NSString * const kDMMSoapBoxDefaultsSuite                    = @"kDMMSoapBoxDefaultsSuite";
+NSString * const kDMMSoapBoxDefaultsSuite                    = @"com.dmiedema.DMMSoapBoxDefaultsSuite";
 
-NSString * const kDMMSoapBoxDefaultsLatestAnnouncementID     = @"kDMMSoapBoxDefaultsLatestAnnouncementID";
+NSString * const kDMMSoapBoxDefaultsLatestAnnouncementID     = @"com.dmiedema.DMMSoapBoxDefaultsLatestAnnouncementID";
 
-NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead   = @"kDMMSoapBoxDefaultsLatestAnnouncementRead";
+NSString * const kDMMSoapBoxDefaultsLatestAnnouncementRead   = @"com.dmiedema.DMMSoapBoxDefaultsLatestAnnouncementRead";
 
-NSString * const kDMMSoapBoxDefaultsLastReadAnnouncementID   = @"kDMMSoapBoxDefaultsLastReadAnnouncementID";
-NSString * const kDMMSoapBoxDefaultsLastReadAnnouncementURL  = @"kDMMSoapBoxDefaultsLastReadAnnouncementURL";
+NSString * const kDMMSoapBoxDefaultsLastReadAnnouncementID   = @"com.dmiedema.DMMSoapBoxDefaultsLastReadAnnouncementID";
+NSString * const kDMMSoapBoxDefaultsLastReadAnnouncementURL  = @"com.dmiedema.DMMSoapBoxDefaultsLastReadAnnouncementURL";
 
 
 NSString * DMMURLForRelativePath(NSString *path) {
@@ -45,10 +45,11 @@ NSString * DMMURLForRelativePath(NSString *path) {
 
 #pragma mark - Properties
 + (void)markLastAnnouncementAsRead {
-    [[DMMUserDefaults soapboxDefaults] setBool:YES forKey:kDMMSoapBoxDefaultsLatestAnnouncementRead];
-    [[DMMUserDefaults soapboxDefaults] setObject:[[DMMUserDefaults soapboxDefaults] stringForKey:kDMMSoapBoxLatestAnnouncementURLKey] forKey:kDMMSoapBoxDefaultsLastReadAnnouncementURL];
-    [[DMMUserDefaults soapboxDefaults] setObject:[DMMUserDefaults latestAnnouncementID] forKey:kDMMSoapBoxDefaultsLastReadAnnouncementID];
-    [[DMMUserDefaults soapboxDefaults] removeObjectForKey:kDMMSoapBoxAcceptActionURL];
+    NSUserDefaults *defaults = [DMMUserDefaults soapboxDefaults];
+    [defaults setBool:YES forKey:kDMMSoapBoxDefaultsLatestAnnouncementRead];
+    [defaults setObject:[defaults stringForKey:kDMMSoapBoxLatestAnnouncementURLKey] forKey:kDMMSoapBoxDefaultsLastReadAnnouncementURL];
+    [defaults setObject:[DMMUserDefaults latestAnnouncementID] forKey:kDMMSoapBoxDefaultsLastReadAnnouncementID];
+    [defaults removeObjectForKey:kDMMSoapBoxAcceptActionURL];
 }
 
 + (void)setBaseURL:(NSString *)baseURL {

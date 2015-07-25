@@ -13,22 +13,24 @@
 #import "DMMSoapBoxPresenterViewController.h"
 #import "DMMUserDefaults.h"
 
-/*!
+NS_ASSUME_NONNULL_BEGIN
+
+/**
  Completion block to when downloading plist completes
  
  @param defaults dictionary downloaded from the endpoint. @c nil if there was an error
  @param error    error received when downloading the plist. @c nil if there was no error
  */
-typedef void(^DMMCompletionBlock)(NSDictionary *defaults, NSError *error);
+typedef void(^DMMCompletionBlock)(NSDictionary *__nullable defaults, NSError *__nullable error);
 
-/*!
+/**
  Check to see if there is a new announement to show
  
  @return @c YES if there is, @c NO if there is not
  */
 BOOL DMMHasNewSoapboxAnnouncement(void);
 
-/*!
+/**
  Map values passed from plist keys to options dictionary for announcemnt presenter
  
  @see DMMSoapboxDictionary to load the defaults as they were archived to disk
@@ -38,32 +40,32 @@ BOOL DMMHasNewSoapboxAnnouncement(void);
  */
 NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults);
 
-/*!
+/**
  Get the path of the file archvie as a string
  
  @return NSString representation of the file path where the defaults plist is archived to
  */
 NSString * DMMSoapboxArchivePath(void);
 
-/*!
+/**
  Load the downloaded plist dictionary
  
  @return NSDictionary representation of the plist downloaded from the given endpoint
  */
 NSDictionary * DMMSoapboxDictionary(void);
 
-/*!
+/**
  */
 @interface DMMSoapBoxDownloader : NSObject
 
-/*!
+/**
  Check the default URL for any new announcements
  
  @param completion completion block to run upon download finishing
  */
 + (void)checkForAnnouncementsWithCompletion:(DMMCompletionBlock)completion;
 
-/*!
+/**
  Download the announcement plist from a url to chek for any new announcements
  
  @param url        @c NSURL to check
@@ -71,11 +73,13 @@ NSDictionary * DMMSoapboxDictionary(void);
  */
 + (void)downloadAnnouncementsFromURL:(NSURL *)url complete:(DMMCompletionBlock)completion;
 
-/*!
+/**
  Register a URL to be the default URL to check
  
- @param url url to make the default plist checking endpoint
+ @param url @c NSString to make the default plist checking endpoint
  */
-+ (void)registerURLForSoapboxCheck:(NSURL *)url;
++ (void)registerURLForSoapboxCheck:(NSString *)url;
+
+NS_ASSUME_NONNULL_END
 
 @end

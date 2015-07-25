@@ -9,5 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (DMMMD5)
-- (NSString *)dmm_MD5String;
+/// Get an MD5 representation of the @c NSString Instance
+- (NSString * __nonnull)dmm_MD5String;
 @end

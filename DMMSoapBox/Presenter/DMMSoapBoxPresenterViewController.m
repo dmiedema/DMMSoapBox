@@ -98,7 +98,10 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     if (!_acceptButton) {
         _acceptButton = [UIButton buttonWithType:UIButtonTypeSystem];
         _acceptButton.translatesAutoresizingMaskIntoConstraints = NO;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-conditional-omitted-operand"
         NSString *title = self.acceptButtonText ?: NSLocalizedString(@"Accept", @"Accept");
+#pragma clang diagnostic pop
         [_acceptButton setTitle:title forState:UIControlStateNormal];
         _acceptButton.backgroundColor = self.acceptButtonColor;
         [_acceptButton addTarget:self action:@selector(acceptPressed:) forControlEvents:UIControlEventTouchUpInside];
@@ -109,10 +112,16 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     if (!_dismissButton) {
         _dismissButton = [UIButton buttonWithType:UIButtonTypeSystem];
         _dismissButton.translatesAutoresizingMaskIntoConstraints = NO;
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-conditional-omitted-operand"
         NSString *title = self.acceptButtonText ?: NSLocalizedString(@"Dismiss", @"Dismiss");
+#pragma clang diagnostic pop
         [_dismissButton setTitle:title forState:UIControlStateNormal];
         [_dismissButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-conditional-omitted-operand"
         _dismissButton.backgroundColor = self.dismissButtonColor ?: [UIColor darkGrayColor];
+#pragma clang diagnostic pop
         [_dismissButton addTarget:self action:@selector(dismissPressed:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _dismissButton;
@@ -203,7 +212,7 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
 }
 
 #pragma mark - Actions
-- (void)acceptPressed:(UIButton *)sender {
+- (void)acceptPressed:(UIButton *__unused)sender {
     if (self.acceptBlock) {
         self.acceptBlock();
     } else if ([DMMUserDefaults acceptActionURL]) {
@@ -214,7 +223,7 @@ NSString * const kDMMSoapBoxPresenterAcceptButtonBlock  = @"kDMMSoapBoxPresenter
     [self sharedDismiss];
 }
 
-- (void)dismissPressed:(UIButton *)sender {
+- (void)dismissPressed:(UIButton *__unused)sender {
     [self sharedDismiss];
 }
 

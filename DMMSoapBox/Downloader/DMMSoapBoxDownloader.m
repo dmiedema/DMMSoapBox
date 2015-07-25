@@ -54,8 +54,10 @@ NSDictionary * DMMDefaultsToOptionsDictionary(NSDictionary *defaults) {
     if (defaults[kDMMSoapBoxAcceptButtonTitle]) {
         options[kDMMSoapBoxPresenterAcceptButtonText] = defaults[kDMMSoapBoxAcceptButtonTitle];
     }
-    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu-conditional-omitted-operand"
     options[kDMMSoapBoxPresenterShowAcceptButton] = defaults[kDMMSoapBoxShowAcceptButton] ?: @NO;
+#pragma clang diagnostic pop
     
     options[kDMMSoapBoxPresenterAcceptButtonColor] = defaults[kDMMSoapBoxAcceptButtonColorHex] ? [UIColor colorFromHexString:defaults[kDMMSoapBoxAcceptButtonColorHex]] : [UIColor whiteColor];
     
@@ -95,7 +97,7 @@ NSDictionary * DMMSoapboxDictionary(void) {
     }];
 }
 
-+ (void)registerURLForSoapboxCheck:(NSURL *)url {
++ (void)registerURLForSoapboxCheck:(NSString *)url {
     [[DMMUserDefaults soapboxDefaults] setObject:url forKey:kDMMSoapBoxDefaultsAnnouncementURL];
 }
 

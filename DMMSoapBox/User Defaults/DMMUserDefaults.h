@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 ////  Defaults Keys
 /// Base URL to append all paths to. Paths given for keys should be relative to this base URL
 extern NSString * const kDMMSoapBoxDefaultsBaseURL;
@@ -37,7 +39,7 @@ static NSString * kDMMSoapBoxAcceptButtonColorHex     = @"soapbox_accept_color";
 /// Key to represent the dimiss button color. Checked for in the Plist
 static NSString * kDMMSoapBoxDismissButtonColorHex    = @"soapbox_dismiss_color";
 
-/*!
+/**
  Create a @c NSString path for a relative url appended to the set base URL
  
  @warning @c setBaseURL: must be set before using this method.
@@ -49,28 +51,28 @@ NSString * DMMURLForRelativePath(NSString *path);
 
 @interface DMMUserDefaults : NSObject
 
-/*!
+/**
  Access @c NSUserDefaults_@c standardUserDefaults through a unified interface
  
  @return @c [NSUserDefaults_@c standardUserDefaults]
  */
 + (NSUserDefaults *)standardUserDefaults;
 
-/*!
+/**
  Access custom @c NSUserDefaults suite
  
  @return custom @c NSUserDefaults suite
  */
 + (NSUserDefaults *)soapboxDefaults;
 
-/*!
+/**
  Mark the last known announcement ID as read
  
  @note stored in @c soapboxDefaults suite
  */
 + (void)markLastAnnouncementAsRead;
 
-/*!
+/**
  Set the base URL for all URL paths.
  
  This value will be prepended to all urls received from the plist
@@ -79,14 +81,14 @@ NSString * DMMURLForRelativePath(NSString *path);
  */
 + (void)setBaseURL:(NSString *)baseURL;
 
-/*!
+/**
  Get the base URL set from @c setBaseURL:
  
  @return the baseURL for paths
  */
 + (NSString *)baseURL;
 
-/*!
+/**
  Retrieve the latest announcement ID we've received
  
  @note stored in @c soapboxDefaults suite
@@ -95,7 +97,7 @@ NSString * DMMURLForRelativePath(NSString *path);
  */
 + (NSString *)latestAnnouncementID;
 
-/*!
+/**
  Retrieve the last announce ID that has been marked as read
  
  @note stored in @c soapboxDefaults suite
@@ -104,7 +106,7 @@ NSString * DMMURLForRelativePath(NSString *path);
  */
 + (NSString *)lastReadAnnouncementID;
 
-/*!
+/**
  Default URL to check for new announcements at
  
  @note stored in @c soapboxDefaults suite
@@ -113,7 +115,7 @@ NSString * DMMURLForRelativePath(NSString *path);
  */
 + (NSURL *)announcementURL;
 
-/*!
+/**
  URL to call upon @c accept action being selected in presenter
  
  @note stored in @c soapboxDefaults suite
@@ -121,5 +123,7 @@ NSString * DMMURLForRelativePath(NSString *path);
  @return URL to have @c sharedApplication call
  */
 + (NSURL *)acceptActionURL;
+
+NS_ASSUME_NONNULL_END
 
 @end

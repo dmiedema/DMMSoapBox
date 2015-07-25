@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 /// typedef to define a block that returns void and takes no arguments
+NS_ASSUME_NONNULL_BEGIN
+
 typedef void(^DMMVoidBlock)(void);
 
 /// Key for options dictionary to set web configuration options
@@ -37,7 +39,7 @@ extern NSString * const kDMMSoapBoxPresenterAcceptButtonBlock;
 /// Accept button block. Has no effect if @c showAcceptButton is @c NO
 @property (copy, nonatomic) DMMVoidBlock acceptBlock;
 
-/*!
+/**
  Create a @c DMMSoapBoxPresenterViewController with specified URL and options alreay applied
  
  @param url     relative url to load. URL must be relative to @c baseURL set on @c DMMUserDefaults
@@ -47,7 +49,7 @@ extern NSString * const kDMMSoapBoxPresenterAcceptButtonBlock;
  */
 + (instancetype)presentationControllerWithURL:(NSURL *)url options:(NSDictionary *)options;
 
-/*!
+/**
  Present a @c DMMSoapBoxPresenterViewController with specified relative URL on the @c UIApplication keyWindow's rootViewController
  
  @see DMMUserDefaults setBaseURL
@@ -57,7 +59,7 @@ extern NSString * const kDMMSoapBoxPresenterAcceptButtonBlock;
  */
 + (void)presentRelativeURL:(NSString *)url withOptions:(NSDictionary *)options;
 
-/*!
+/**
  Present a @c DMMSoapBoxPresenterViewController with specified full URL on the @c UIApplication keyWindow's rootViewController
  
  @see DMMUserDefaults setBaseURL
@@ -66,4 +68,6 @@ extern NSString * const kDMMSoapBoxPresenterAcceptButtonBlock;
  @param options dictionary of options to load and apply to controller
  */
 + (void)presentURL:(NSString *)url withOptions:(NSDictionary *)options;
+
+NS_ASSUME_NONNULL_END
 @end
