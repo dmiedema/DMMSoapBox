@@ -1,4 +1,5 @@
 language: objective-c
+osx_image: xcode6.4
 xcode_workspace: DMMSoapBoxDemo.xcworkspace
 xcode_scheme: DMMSoapBoxDemo
 xcode_sdk:
